@@ -6,12 +6,13 @@
 Idempotent: if the dashboard exists it is left alone. Uses only the standard library.
 """
 import json
+import os
 import sys
 import time
 import urllib.error
 import urllib.request
 
-MB = "http://localhost:3000"
+MB = os.getenv("METABASE_URL", "http://localhost:3000")
 USER = {"email": "lab@example.com", "password": "Day9-lab-pass!", "first_name": "Lab", "last_name": "User"}
 
 
